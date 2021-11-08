@@ -1,13 +1,15 @@
-import './styles.css';
+
 import {NavBar} from './components/NavBAr/NavBar'
+import {ItemListContainer} from './components/Container/ItemListContainer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button} from 'react-bootstrap'
 function App() {
   return (
-    <div className="miApp">
+    <>
       <NavBar/>
-   <h2>My E-commerce
-   </h2>
-   <p>Lorem ipsum</p>
-        </div>
+      <Button>Click</Button>
+      <ItemListContainer greeting="My Ecommerce"/>
+       </>
   );
 }
 

@@ -1,5 +1,14 @@
+
 .NavBar {
+    padding: 20px;
     width:100%;
     background-color: brown;
-
+ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    li {
+        padding-right: 60px;
+    }
+}
 }
