@@ -1,16 +1,18 @@
 import React from 'react'
+import './itemList.scss';
 import {Container, Row} from 'react-bootstrap'
 import {Item} from '../Item/Item'
 
+
 export const ItemList = ({products}) => {
     return (
-        <Container className="row">
+        <div className="products">
             <h2>Productos</h2>
             <hr/>
-            <Row>
-            {products.map((prod) => ( <Item prod={prod}/>
+            
+            {products.map((prod) => ( <Item key={prod.id} prod={prod}/>
             ))}
-          </Row>
-            </Container>
+          
+            </div>
     )
 }
