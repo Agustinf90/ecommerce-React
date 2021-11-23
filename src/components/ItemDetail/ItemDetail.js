@@ -1,6 +1,7 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router'
+import './ItemDetail.scss'
 export const ItemDetail = ({id, name, img, desc, price, cat}) => {
     console.log(id, name, img, desc, price, cat)
     
@@ -9,9 +10,12 @@ export const ItemDetail = ({id, name, img, desc, price, cat}) => {
         navigate(-1)
     }
     return (
-        <div>
-            HOLA
+        <div className="itemDetail">
+            
             <h1>{name}</h1>
+            <img src= {img}/>
+            <p>{desc}</p>
+            <p>Precio:{price}</p>
             {/* <Card key={item.id} style={{ width: '18rem' }}>
   <Card.Img variant="top" src={item.img} />
   <Card.Body>

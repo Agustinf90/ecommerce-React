@@ -22,6 +22,7 @@ useEffect(() => {
 setLoading(true)
   consultProducts()
   .then((response) => {
+
     if(!catId){
      setProducts(response)
     } else {
