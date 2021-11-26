@@ -4,7 +4,8 @@ export const stock = [{
     name: "Cerveza Rubia",
     desc: "Lorem ipsum",
     img: "https://via.placeholder.com/150",
-    cat: "rubia"
+    cat: "rubia",
+    stock: 20
 },
 {
     id: 2,
@@ -12,7 +13,8 @@ export const stock = [{
     name: "Cerveza Roja",
     desc: "Lorem ipsum",
     img: "https://via.placeholder.com/150",
-    cat: "roja"
+    cat: "roja",
+    stock: 20
 },
 {
     id: 3,
@@ -20,5 +22,6 @@ export const stock = [{
     name: "Cerveza Negra",
     desc: "Lorem ipsum",
     img: "https://via.placeholder.com/150",
-    cat: "negra"
+    cat: "negra",
+    stock: 20
 }]
