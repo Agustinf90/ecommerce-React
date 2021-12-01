@@ -1,15 +1,19 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router'
-import { useState} from 'react'
+import { useState, useContext} from 'react'
+import {CartContext} from '../../context/CartContext'
 import './ItemDetail.scss'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
+
 export const ItemDetail = ({id, name, img, desc, price, stock, cat, }) => {
+
+    const {addToCart, isInCart} = useContext(CartContext)
 
 
     const [cant, setCant] = useState(0);
-    const [add, setAdd] = useState(false);
+    // const [add, setAdd] = useState(false);
      
     const navigate = useNavigate()
     const back = () => {
@@ -18,13 +22,15 @@ export const ItemDetail = ({id, name, img, desc, price, stock, cat, }) => {
 
     const handleAddCart = () => {
         if (cant > 0) { 
-        console.log('item added', {
-            id,
-            name,
-            price,
-            cant
-        })
-        setAdd(true)
+       addToCart({
+           id,
+           name,
+           price,
+           img,
+           cant
+       })
+
+        // setAdd(true)
     }
     }
 
@@ -37,7 +43,7 @@ export const ItemDetail = ({id, name, img, desc, price, stock, cat, }) => {
             <p>{desc}</p>
             <p>Precio:{price}</p>
            {
-            !add 
+            !isInCart(id) 
             ? <ItemCount 
             max={stock}
             cant={cant} 

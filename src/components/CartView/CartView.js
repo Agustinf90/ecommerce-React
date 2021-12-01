@@ -1,9 +1,37 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { CartContext } from '../../context/CartContext'
+import { CartItem } from './CartItem'
+import {Link} from 'react-router-dom'
 
 export const CartView = () => {
+    
+    const {cart, removeCart} = useContext(CartContext)
+
     return (
         <div>
-            <h1>Carrito</h1>
+           
+            {
+            cart.length > 0
+            ? <>
+             <h2>Cart</h2>
+            <hr/>
+            <section>
+            {
+                cart.map((prod) => (
+                    <CartItem {...prod}/>))
+            }
+            </section>
+            <hr/>
+            <div>
+                <button className="btn btn-danger" onClick={removeCart}>Clear Cart</button>
+                <button className="btn btn-success">Finnish Purchase</button>
+            </div>
+            </>
+            : <>
+            <h2>Not products in cart yet</h2>
+            <Link to="/">Volver al inicio</Link> 
+            </>
+}
         </div>
     )
 }
