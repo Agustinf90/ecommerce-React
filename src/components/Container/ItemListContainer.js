@@ -7,7 +7,9 @@ import cerveza2 from '../Images/cerveza2.jpg'
 import {consultProducts} from '../../helpers/consultProducts'
 import {ItemList} from '../ItemList/ItemList'
 import {useParams} from 'react-router'
-
+import {Loader} from '../Loader/Loader'
+import {collection, getDocs, query, where} from 'firebase/firestore/lite'
+import {db} from '../../firebase/config'
 
 export const ItemListContainer = ({greeting}) => {
 
@@ -20,21 +22,40 @@ console.log(catId)
 
 useEffect(() => {
 setLoading(true)
-  consultProducts()
-  .then((response) => {
+const productsRef = collection(db, 'products')
+console.log(productsRef)
 
-    if(!catId){
-     setProducts(response)
-    } else {
-        setProducts(response.filter( prod => prod.cat === catId))
-    }
- })
- .catch((error) => {
- console.log(error)
- })
- .finally(() => {
+const quer = catId ? query(productsRef, where('cat', '==', catId)) : productsRef
+console.log(quer)
+
+getDocs(quer)
+.then((collection)=> {
+const items = collection.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data()
+}))
+setProducts(items)
+console.log(items)
+
+})
+.finally(()=> {
     setLoading(false)
-    })
+})
+//   consultProducts()
+//   .then((response) => {
+
+//     if(!catId){
+//      setProducts(response)
+//     } else {
+//         setProducts(response.filter( prod => prod.cat === catId))
+//     }
+//  })
+//  .catch((error) => {
+//  console.log(error)
+//  })
+//  .finally(() => {
+//     setLoading(false)
+//     })
 }, [catId])
 
     return <div className = "ItemListContainer">
@@ -47,7 +68,7 @@ setLoading(true)
      */}
     {
         loading
-          ? <h2>Cargando...</h2>
+          ? <h2><Loader/></h2>
           : <Fragment>
           <ItemList products={products}/>
           </Fragment>

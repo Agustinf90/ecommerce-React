@@ -15,11 +15,20 @@ export const ItemCount = ({max, cant, setCant, onAdd}) => {
 
     return ( 
         <div>
-         <button className="btn btn-outline-primary" onClick={handleRemove}>-</button>
+         <button className={cant === 0 ? "btn btn-danger" : "btn btn-outline-primary"} 
+         onClick={handleRemove}
+         disabled={cant === 0}
+         >-</button>
         <span className="mx-2">{cant}</span>
-        <button className="btn btn-primary" onClick={handleAdd}>+</button>
+        <button className={cant === max ? "btn btn-danger" : "btn btn-outline-primary"}
+        onClick={handleAdd}
+        disabled={cant === max}
+        >+</button>
         <br/>
-        <button className="btn btn-success" onClick={onAdd}>Agregar al Carrito</button>
+        <button className={cant === 0 ? "btn btn-danger" : "btn btn-success"} 
+        onClick={onAdd}
+        disabled={cant === 0}
+        >Agregar al Carrito</button>
         </div>
     )
 }
