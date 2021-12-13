@@ -8,6 +8,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {CartContext} from './context/CartContext'
 import { useState} from 'react'
 import {CartProvider} from './context/CartContext'
+import {Checkout} from './components/Checkout/Checkout'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path= "/productos/:catId" element={<ItemListContainer/>}/>
         <Route path= "/detail/:itemId" element={<ItemDetailContainer/>}/>
         <Route path= "/cart" element={<CartView/>}/>
+        <Route path= "/checkout" element={<Checkout/>}/>
       </Routes>
       </BrowserRouter>
       </CartProvider>      

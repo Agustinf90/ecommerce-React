@@ -24,7 +24,7 @@ export const CartView = () => {
             <hr/>
             <div>
                 <button className="btn btn-danger" onClick={clearCart}>Clear Cart</button>
-                <button className="btn btn-success">Finnish Purchase</button>
+                <Link to="/checkout" className="btn btn-success">Finnish Purchase</Link>
             </div>
             </>
             : <>
