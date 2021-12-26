@@ -13,7 +13,7 @@ export const ItemDetail = ({id, name, img, desc, price, stock, cat, }) => {
 
 
     const [cant, setCant] = useState(0);
-    // const [add, setAdd] = useState(false);
+
      
     const navigate = useNavigate()
     const back = () => {
@@ -30,7 +30,6 @@ export const ItemDetail = ({id, name, img, desc, price, stock, cat, }) => {
            cant
        })
 
-        // setAdd(true)
     }
     }
 
@@ -53,18 +52,7 @@ export const ItemDetail = ({id, name, img, desc, price, stock, cat, }) => {
             :
             <Link to="/cart" className="btn btn-success">Terminar Compra</Link>
         }
-             {/* <Card key={item.id} style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={item.img} />
-  <Card.Body>
-    <Card.Title>{item.name}</Card.Title>
-    <Card.Text> 
-    {item.desc}
-    Precio: ${item.price}   
-    ${item.cat}
-    </Card.Text>
-    <Button variant="primary">SDGSDGDS</Button>
-  </Card.Body>
-</Card> */}
+            
 <Button variant="primary" onClick={back}>Volver</Button>
         </div>
     )

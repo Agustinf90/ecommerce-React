@@ -5,8 +5,6 @@ import { ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailC
 import { CartView } from './components/CartView/CartView';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {CartContext} from './context/CartContext'
-import { useState} from 'react'
 import {CartProvider} from './context/CartContext'
 import {Checkout} from './components/Checkout/Checkout'
 
@@ -17,8 +15,6 @@ function App() {
    <CartProvider>
     <BrowserRouter>
       <NavBar/>
-      {/* <Form/> */}
-      {/* <Button>Click</Button> */}
       <Routes>
         <Route path= "/" element={<ItemListContainer/>}/>
         <Route path= "/productos/:catId" element={<ItemListContainer/>}/>

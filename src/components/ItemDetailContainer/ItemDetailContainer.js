@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
-import { consultProducts } from '../../helpers/consultProducts'
+
 import {useParams} from 'react-router-dom'
 import {Loader} from '../Loader/Loader'
 import {doc, getDoc} from 'firebase/firestore/lite'
@@ -30,14 +30,7 @@ useEffect(()=> {
  .finally(() => {
      setLoading(false)
  })
-//  consultProducts()
-//  .then( resp=> {
-//      setItem( resp.find(prod => prod.id === Number(itemId)))
-//      console.log(item)
-//  })
-//  .finally(()=>{
-//      setLoading(false)
-//  })
+
 }, [])
 console.log(item)
     return (

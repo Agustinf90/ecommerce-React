@@ -78,16 +78,7 @@ export const Checkout = () => {
                 text: outOfStock.map(el => el.name).join(',')
             })
         }
-    // cart.forEach((prod) => {
-    //     const docRef = doc(prodsRef, prod.id)
-    
-    // getDoc(docRef)
-    // .then((doc) => {
-    //     updateDoc(doc.ref, {
-    //         stock: doc.data().stock - prod.cant
-    //     })
-    // })
-    // })
+ 
     
     
     

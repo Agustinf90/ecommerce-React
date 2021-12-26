@@ -1,10 +1,6 @@
 import React, {Fragment, useEffect, useState} from 'react'
 import './ItemListContainer.scss';
-import {ProductCard} from '../ProductCard/ProductCard'
-import cerveza1 from '../Images/cerveza1.jpg'
-import cerveza2 from '../Images/cerveza2.jpg'
-// import {stock} from '../../data/stock'
-import {consultProducts} from '../../helpers/consultProducts'
+
 import {ItemList} from '../ItemList/ItemList'
 import {useParams} from 'react-router'
 import {Loader} from '../Loader/Loader'

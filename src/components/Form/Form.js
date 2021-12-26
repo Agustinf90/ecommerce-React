@@ -52,15 +52,3 @@ console.log(values)
     )
 }
 
-// const [nombre, setNombre] = useState('')
-// const [apellido, setApellido] = useState('')
-
-// const handleName = (e) => {
-//     console.log(e.target.value)
-//     setNombre(e.target.value)
-//     }
-
-//     const handleLastname = (e) => {
-//         console.log(e.target.value)
-//         setApellido(e.target.value)
-//         }
