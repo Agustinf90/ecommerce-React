@@ -1,3 +1,3 @@
-# Proyecto App React
-E-commerce sobre emprendimiento personal de cerveza artesanal con posibilidad de acceder, clasificar y acumular productos disponibles en un carrito y generar orden de compra con los datos del comprador en tiempo real en base a un stock original.
-Tecnologías utilizadas: HTML, CSS, SASS, JAVASCRIPT, REACT y FIREBASE.
+# React App project - Ecommerce of a personal entrepreneurship (brewery) with the posibility to access, filter and add products available with cart and generate a buying order with personal data in real time and with an original stock.
+Technologies: html, css, sass, javascript, react and firebase
+
